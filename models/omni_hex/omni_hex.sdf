@@ -1,0 +1,961 @@
+<sdf version='1.6'>
+  <model name='omni_hex'>
+
+  <!-- links start -->
+
+    <link name='base'>
+
+      <pose>0 0 0 0 0 0</pose>
+
+      <visual name='base_visual'>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/base.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name='base_collision'>
+        <pose>0 0 -0.109 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.43 0.338</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <inertial>
+        <mass>2.46683</mass>
+        <pose>-0.00338 -0.00015 -0.04877 0 0 0</pose>
+        <inertia>
+          <ixx> 0.01758464993</ixx>
+          <ixy>-0.00000489422</ixy>
+          <ixz>-0.00002607223</ixz>
+          <iyy> 0.01525399621</iyy>
+          <iyz> 0.00000188561</iyz>
+          <izz> 0.01586470417</izz>
+          <!-- <ixx>0.01758464993</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01525399621</iyy>
+          <iyz>0</iyz>
+          <izz>0.01586470417</izz> -->
+        </inertia>
+      </inertial>
+
+      <sensor name="camera" type="camera">
+        <pose>0.1 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>1.5</horizontal_fov>
+          <image>
+            <format>R8G8B8</format>
+            <width>640</width>
+            <height>360</height>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>15000</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>1</visualize>
+      </sensor>
+      
+    </link>
+
+
+    <link name='arm1'>
+
+      <pose>0 -0.34 0 0 0 1.57079632679</pose>
+
+      <visual name='arm1_visual'>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/arm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name='arm1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.165</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>0.21474</mass>
+        <pose>0.0419 -0.00004 0.00722 0 0 0</pose>
+        <inertia>
+          <ixx> 0.00004296796</ixx>
+          <ixy> 0.00000039396</ixy>
+          <ixz>-0.00006748808</ixz>
+          <iyy> 0.00099997586</iyy>
+          <iyz> 0.00000001952</iyz>
+          <izz> 0.00099628807</izz>
+          <!-- <ixx>0.00004296796</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00099997586</iyy>
+          <iyz>0</iyz>
+          <izz>0.00099628807</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='prop1'>
+
+      <pose>0 -0.34 0.029 0 0 1.57079632679</pose>
+
+      <visual name='prop1_visual'>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/prop-cw-13.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <inertial>
+        <mass>0.00977848</mass>
+        <pose>0 0 0.00152166</pose>
+        <inertia>
+          <ixx> 0.000062038.77191</ixx>
+          <ixy>-0.000001122.61938</ixy>
+          <ixz> 0.000000000.04403</ixz>
+          <iyy> 0.000000417.62008</iyy>
+          <iyz>-0.000000000.19196</iyz>
+          <izz> 0.000062407.85473</izz>
+          <!-- <ixx>0.000062038.77191</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000000417.62008</iyy>
+          <iyz>0</iyz>
+          <izz>0.000062407.85473</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='arm2'>
+
+      <pose>0 0.34 0 0 0 -1.570796326794897</pose>
+
+      <visual name='arm2_visual'>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/arm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name='arm2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.165</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>0.21474</mass>
+        <pose>0.0419 -0.00004 0.00722 0 0 0</pose>
+        <inertia>
+          <ixx> 0.00004296796</ixx>
+          <ixy> 0.00000039396</ixy>
+          <ixz>-0.00006748808</ixz>
+          <iyy> 0.00099997586</iyy>
+          <iyz> 0.00000001952</iyz>
+          <izz> 0.00099628807</izz>
+          <!-- <ixx>0.00004296796</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00099997586</iyy>
+          <iyz>0</iyz>
+          <izz>0.00099628807</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='prop2'>
+
+      <pose>0 0.34 0.029 0 0 -1.570796326794897</pose>
+
+      <visual name='prop2_visual'>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/prop-ccw-13.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <inertial>
+        <mass>0.00977848</mass>
+        <pose>0 0 0.00152166</pose>
+        <inertia>
+          <ixx> 0.000062038.77191</ixx>
+          <ixy> 0.000001122.61938</ixy>
+          <ixz>-0.000000000.04403</ixz>
+          <iyy> 0.000000417.62008</iyy>
+          <iyz>-0.000000000.19196</iyz>
+          <izz> 0.000062407.85473</izz>
+          <!-- <ixx>0.000062038.77191</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000000417.62008</iyy>
+          <iyz>0</iyz>
+          <izz>0.000062407.85473</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='arm3'>
+
+      <pose>0.294448637286709 0.17 0 0 0 -2.617993877991494</pose>
+
+      <visual name='arm3_visual'>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/arm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name='arm3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.165</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>0.21474</mass>
+        <pose>0.0419 -0.00004 0.00722 0 0 0</pose>
+        <inertia>
+          <ixx> 0.00004296796</ixx>
+          <ixy> 0.00000039396</ixy>
+          <ixz>-0.00006748808</ixz>
+          <iyy> 0.00099997586</iyy>
+          <iyz> 0.00000001952</iyz>
+          <izz> 0.00099628807</izz>
+          <!-- <ixx>0.00004296796</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00099997586</iyy>
+          <iyz>0</iyz>
+          <izz>0.00099628807</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='prop3'>
+
+      <pose>0.294448637286709 0.17 0.029 0 0 -2.617993877991494</pose>
+
+      <visual name='prop3_visual'>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/prop-cw-13.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <inertial>
+        <mass>0.00977848</mass>
+        <pose>0 0 0.00152166</pose>
+        <inertia>
+          <ixx> 0.000062038.77191</ixx>
+          <ixy>-0.000001122.61938</ixy>
+          <ixz> 0.000000000.04403</ixz>
+          <iyy> 0.000000417.62008</iyy>
+          <iyz>-0.000000000.19196</iyz>
+          <izz> 0.000062407.85473</izz>
+          <!-- <ixx>0.000062038.77191</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000000417.62008</iyy>
+          <iyz>0</iyz>
+          <izz>0.000062407.85473</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+
+    <link name='arm4'>
+
+      <pose>-0.294448637286709 -0.17 0 0 0 0.523598775598299</pose>
+
+      <visual name='arm4_visual'>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/arm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name='arm4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.165</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>0.21474</mass>
+        <pose>0.0419 -0.00004 0.00722 0 0 0</pose>
+        <inertia>
+          <ixx> 0.00004296796</ixx>
+          <ixy> 0.00000039396</ixy>
+          <ixz>-0.00006748808</ixz>
+          <iyy> 0.00099997586</iyy>
+          <iyz> 0.00000001952</iyz>
+          <izz> 0.00099628807</izz>
+          <!-- <ixx>0.00004296796</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00099997586</iyy>
+          <iyz>0</iyz>
+          <izz>0.00099628807</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='prop4'>
+
+      <pose>-0.294448637286709 -0.17 0.029 0 0 0.523598775598299</pose>
+
+      <visual name='prop4_visual'>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/prop-ccw-13.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <inertial>
+        <mass>0.00977848</mass>
+        <pose>0 0 0.00152166</pose>
+        <inertia>
+          <ixx> 0.000062038.77191</ixx>
+          <ixy> 0.000001122.61938</ixy>
+          <ixz>-0.000000000.04403</ixz>
+          <iyy> 0.000000417.62008</iyy>
+          <iyz>-0.000000000.19196</iyz>
+          <izz> 0.000062407.85473</izz>
+          <!-- <ixx>0.000062038.77191</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000000417.62008</iyy>
+          <iyz>0</iyz>
+          <izz>0.000062407.85473</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='arm5'>
+
+      <pose>0.294448637286709 -0.17 0 0 0 2.617993877991494</pose>
+
+      <visual name='arm5_visual'>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/arm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name='arm5_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.165</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>0.21474</mass>
+        <pose>0.0419 -0.00004 0.00722 0 0 0</pose>
+        <inertia>
+          <ixx> 0.00004296796</ixx>
+          <ixy> 0.00000039396</ixy>
+          <ixz>-0.00006748808</ixz>
+          <iyy> 0.00099997586</iyy>
+          <iyz> 0.00000001952</iyz>
+          <izz> 0.00099628807</izz>
+          <!-- <ixx>0.00004296796</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00099997586</iyy>
+          <iyz>0</iyz>
+          <izz>0.00099628807</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='prop5'>
+
+      <pose>0.294448637286709 -0.17 0.029 0 0 2.617993877991494</pose>
+
+      <visual name='prop5_visual'>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/prop-ccw-13.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <inertial>
+        <mass>0.00977848</mass>
+        <pose>0 0 0.00152166</pose>
+        <inertia>
+          <ixx> 0.000062038.77191</ixx>
+          <ixy> 0.000001122.61938</ixy>
+          <ixz>-0.000000000.04403</ixz>
+          <iyy> 0.000000417.62008</iyy>
+          <iyz>-0.000000000.19196</iyz>
+          <izz> 0.000062407.85473</izz>
+          <!-- <ixx>0.000062038.77191</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000000417.62008</iyy>
+          <iyz>0</iyz>
+          <izz>0.000062407.85473</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+
+    <link name='arm6'>
+
+      <pose>-0.294448637286709 0.17 0 0 0 -0.523598775598299</pose>
+
+      <visual name='arm6_visual'>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/arm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name='arm6_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.165</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>0.21474</mass>
+        <pose>0.0419 -0.00004 0.00722 0 0 0</pose>
+        <inertia>
+          <ixx> 0.00004296796</ixx>
+          <ixy> 0.00000039396</ixy>
+          <ixz>-0.00006748808</ixz>
+          <iyy> 0.00099997586</iyy>
+          <iyz> 0.00000001952</iyz>
+          <izz> 0.00099628807</izz>
+          <!-- <ixx>0.00004296796</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00099997586</iyy>
+          <iyz>0</iyz>
+          <izz>0.00099628807</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+
+    <link name='prop6'>
+
+      <pose>-0.294448637286709 0.17 0.029 0 0 -0.523598775598299</pose>
+
+      <visual name='prop6_visual'>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://omni_hex/meshes/prop-cw-13.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <inertial>
+        <mass>0.00977848</mass>
+        <pose>0 0 0.00152166</pose>
+        <inertia>
+          <ixx> 0.000062038.77191</ixx>
+          <ixy>-0.000001122.61938</ixy>
+          <ixz> 0.000000000.04403</ixz>
+          <iyy> 0.000000417.62008</iyy>
+          <iyz>-0.000000000.19196</iyz>
+          <izz> 0.000062407.85473</izz>
+          <!-- <ixx>0.000062038.77191</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000000417.62008</iyy>
+          <iyz>0</iyz>
+          <izz>0.000062407.85473</izz> -->
+        </inertia>
+      </inertial>
+
+    </link>
+
+
+  <!-- links end -->
+
+  <!-- joints start -->
+
+    <joint name='arm_joint_1' type='revolute'>
+
+      <parent>base</parent>
+
+      <child>arm1</child>
+
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-8</lower>
+          <upper>8</upper>
+        </limit>
+      </axis>
+
+    </joint>
+
+
+
+
+    <joint name='arm_joint_2' type='revolute'>
+
+      <parent>base</parent>
+
+      <child>arm2</child>
+
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-8</lower>
+          <upper>8</upper>
+        </limit>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='arm_joint_3' type='revolute'>
+
+      <parent>base</parent>
+
+      <child>arm3</child>
+
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-8</lower>
+          <upper>8</upper>
+        </limit>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='arm_joint_4' type='revolute'>
+
+      <parent>base</parent>
+
+      <child>arm4</child>
+
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-8</lower>
+          <upper>8</upper>
+        </limit>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='arm_joint_5' type='revolute'>
+
+      <parent>base</parent>
+
+      <child>arm5</child>
+
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-8</lower>
+          <upper>8</upper>
+        </limit>
+      </axis>
+
+    </joint>
+
+
+
+
+    <joint name='arm_joint_6' type='revolute'>
+
+      <parent>base</parent>
+
+      <child>arm6</child>
+
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-8</lower>
+          <upper>8</upper>
+        </limit>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='prop_joint_1' type='revolute'>
+
+      <parent>arm1</parent>
+
+      <child>prop1</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='prop_joint_2' type='revolute'>
+
+      <parent>arm2</parent>
+
+      <child>prop2</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='prop_joint_3' type='revolute'>
+
+      <parent>arm3</parent>
+
+      <child>prop3</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='prop_joint_4' type='revolute'>
+
+      <parent>arm4</parent>
+
+      <child>prop4</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='prop_joint_5' type='revolute'>
+
+      <parent>arm5</parent>
+
+      <child>prop5</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+
+    </joint>
+
+
+
+    <joint name='prop_joint_6' type='revolute'>
+
+      <parent>arm6</parent>
+
+      <child>prop6</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+
+    </joint>
+
+
+  <!-- joints end -->
+
+  <!-- motor plugin start -->
+    <plugin name='motor1' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>prop_joint_1</jointName>
+      <linkName>prop1</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.5e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='motor2' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>prop_joint_2</jointName>
+      <linkName>prop2</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.5e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='motor3' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>prop_joint_3</jointName>
+      <linkName>prop3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.5e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='motor4' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>prop_joint_4</jointName>
+      <linkName>prop4</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.5e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='motor5' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>prop_joint_5</jointName>
+      <linkName>prop5</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.5e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>4</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+    <plugin name='motor6' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>prop_joint_6</jointName>
+      <linkName>prop6</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.5e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>5</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient>
+      <rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/5</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+  <!-- motor plugin end -->
+
+
+  </model>
+</sdf>
