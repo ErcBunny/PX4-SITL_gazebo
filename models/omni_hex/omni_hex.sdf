@@ -668,6 +668,9 @@
           <lower>-8</lower>
           <upper>8</upper>
         </limit>
+        <dynamics>
+          <friction>1</friction>
+        </dynamics>
       </axis>
 
     </joint>
@@ -687,6 +690,9 @@
           <lower>-8</lower>
           <upper>8</upper>
         </limit>
+        <dynamics>
+          <friction>1</friction>
+        </dynamics>
       </axis>
 
     </joint>
@@ -705,6 +711,9 @@
           <lower>-8</lower>
           <upper>8</upper>
         </limit>
+        <dynamics>
+          <friction>1</friction>
+        </dynamics>
       </axis>
 
     </joint>
@@ -723,6 +732,9 @@
           <lower>-8</lower>
           <upper>8</upper>
         </limit>
+        <dynamics>
+          <friction>1</friction>
+        </dynamics>
       </axis>
 
     </joint>
@@ -741,6 +753,9 @@
           <lower>-8</lower>
           <upper>8</upper>
         </limit>
+        <dynamics>
+          <friction>1</friction>
+        </dynamics>
       </axis>
 
     </joint>
@@ -760,6 +775,9 @@
           <lower>-8</lower>
           <upper>8</upper>
         </limit>
+        <dynamics>
+          <friction>1</friction>
+        </dynamics>
       </axis>
 
     </joint>
@@ -852,7 +870,7 @@
   <!-- joints end -->
 
   <!-- motor plugin start -->
-    <plugin name='motor1' filename='libgazebo_motor_model.so'>
+    <plugin name='motor1' filename='libgazebo_ros_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>prop_joint_1</jointName>
       <linkName>prop1</linkName>
@@ -862,14 +880,14 @@
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.5e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
-      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <commandSubTopic>/gazebo/command/motor_speed/m1</commandSubTopic>
       <motorNumber>0</motorNumber>
       <rotorDragCoefficient>0</rotorDragCoefficient>
       <rollingMomentCoefficient>0</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <plugin name='motor2' filename='libgazebo_motor_model.so'>
+    <plugin name='motor2' filename='libgazebo_ros_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>prop_joint_2</jointName>
       <linkName>prop2</linkName>
@@ -879,14 +897,14 @@
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.5e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
-      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <commandSubTopic>/gazebo/command/motor_speed/m2</commandSubTopic>
       <motorNumber>1</motorNumber>
       <rotorDragCoefficient>0</rotorDragCoefficient>
       <rollingMomentCoefficient>0</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <plugin name='motor3' filename='libgazebo_motor_model.so'>
+    <plugin name='motor3' filename='libgazebo_ros_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>prop_joint_3</jointName>
       <linkName>prop3</linkName>
@@ -896,14 +914,14 @@
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.5e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
-      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <commandSubTopic>/gazebo/command/motor_speed/m3</commandSubTopic>
       <motorNumber>2</motorNumber>
       <rotorDragCoefficient>0</rotorDragCoefficient>
       <rollingMomentCoefficient>0</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <plugin name='motor4' filename='libgazebo_motor_model.so'>
+    <plugin name='motor4' filename='libgazebo_ros_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>prop_joint_4</jointName>
       <linkName>prop4</linkName>
@@ -913,14 +931,14 @@
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.5e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
-      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <commandSubTopic>/gazebo/command/motor_speed/m4</commandSubTopic>
       <motorNumber>3</motorNumber>
       <rotorDragCoefficient>0</rotorDragCoefficient>
       <rollingMomentCoefficient>0</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <plugin name='motor5' filename='libgazebo_motor_model.so'>
+    <plugin name='motor5' filename='libgazebo_ros_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>prop_joint_5</jointName>
       <linkName>prop5</linkName>
@@ -930,14 +948,14 @@
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.5e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
-      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <commandSubTopic>/gazebo/command/motor_speed/m5</commandSubTopic>
       <motorNumber>4</motorNumber>
       <rotorDragCoefficient>0</rotorDragCoefficient>
       <rollingMomentCoefficient>0</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <plugin name='motor6' filename='libgazebo_motor_model.so'>
+    <plugin name='motor6' filename='libgazebo_ros_motor_model.so'>
       <robotNamespace></robotNamespace>
       <jointName>prop_joint_6</jointName>
       <linkName>prop6</linkName>
@@ -947,7 +965,7 @@
       <maxRotVelocity>1500</maxRotVelocity>
       <motorConstant>8.5e-06</motorConstant>
       <momentConstant>0.06</momentConstant>
-      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <commandSubTopic>/gazebo/command/motor_speed/m6</commandSubTopic>
       <motorNumber>5</motorNumber>
       <rotorDragCoefficient>0</rotorDragCoefficient>
       <rollingMomentCoefficient>0</rollingMomentCoefficient>
@@ -957,67 +975,7 @@
   <!-- motor plugin end -->
 
   <!-- ros2 joint control plugin start -->
-    <plugin name='prop1_pid_plugin' filename='libgazebo_ros_joint_pid_ctrl.so'>
-      <joint_name>prop_joint_1</joint_name>
-      <ctrl_type>velocity</ctrl_type>
-      <init_pos>0</init_pos>
-      <init_vel>0</init_vel>
-      <p>0.25</p>
-      <i>0.01</i>
-      <d>0</d>
-      <ros_topic>/omni_hex/prop_joint_1/vel/setpoint</ros_topic>
-    </plugin>
-    <plugin name='prop2_pid_plugin' filename='libgazebo_ros_joint_pid_ctrl.so'>
-      <joint_name>prop_joint_2</joint_name>
-      <ctrl_type>velocity</ctrl_type>
-      <init_pos>0</init_pos>
-      <init_vel>0</init_vel>
-      <p>0.25</p>
-      <i>0.01</i>
-      <d>0</d>
-      <ros_topic>/omni_hex/prop_joint_2/vel/setpoint</ros_topic>
-    </plugin>
-    <plugin name='prop3_pid_plugin' filename='libgazebo_ros_joint_pid_ctrl.so'>
-      <joint_name>prop_joint_3</joint_name>
-      <ctrl_type>velocity</ctrl_type>
-      <init_pos>0</init_pos>
-      <init_vel>0</init_vel>
-      <p>0.25</p>
-      <i>0.01</i>
-      <d>0</d>
-      <ros_topic>/omni_hex/prop_joint_3/vel/setpoint</ros_topic>
-    </plugin>
-    <plugin name='prop4_pid_plugin' filename='libgazebo_ros_joint_pid_ctrl.so'>
-      <joint_name>prop_joint_4</joint_name>
-      <ctrl_type>velocity</ctrl_type>
-      <init_pos>0</init_pos>
-      <init_vel>0</init_vel>
-      <p>0.25</p>
-      <i>0.01</i>
-      <d>0</d>
-      <ros_topic>/omni_hex/prop_joint_4/vel/setpoint</ros_topic>
-    </plugin>
-    <plugin name='prop5_pid_plugin' filename='libgazebo_ros_joint_pid_ctrl.so'>
-      <joint_name>prop_joint_5</joint_name>
-      <ctrl_type>velocity</ctrl_type>
-      <init_pos>0</init_pos>
-      <init_vel>0</init_vel>
-      <p>0.25</p>
-      <i>0.01</i>
-      <d>0</d>
-      <ros_topic>/omni_hex/prop_joint_5/vel/setpoint</ros_topic>
-    </plugin>
-    <plugin name='prop6_pid_plugin' filename='libgazebo_ros_joint_pid_ctrl.so'>
-      <joint_name>prop_joint_6</joint_name>
-      <ctrl_type>velocity</ctrl_type>
-      <init_pos>0</init_pos>
-      <init_vel>0</init_vel>
-      <p>0.25</p>
-      <i>0.01</i>
-      <d>0</d>
-      <ros_topic>/omni_hex/prop_joint_6/vel/setpoint</ros_topic>
-    </plugin>
-    <plugin name='arm1_pid_plugin' filename='libgazebo_ros_joint_pid_ctrl.so'>
+    <!-- <plugin name='arm1_pid_plugin' filename='libgazebo_ros_joint_pid_ctrl.so'>
       <joint_name>arm_joint_1</joint_name>
       <ctrl_type>position</ctrl_type>
       <init_pos>0</init_pos>
@@ -1076,8 +1034,41 @@
       <i>0.1</i>
       <d>0.01</d>
       <ros_topic>/omni_hex/arm_joint_6/pos/setpoint</ros_topic>
+    </plugin> -->
+  <!-- ros2 joint control plugin end -->
+
+  <!-- ros2 joint motor plugin start -->
+    <plugin name='arm1_joint_motor' filename='libgazebo_ros_joint_motor.so'>
+      <joint_name>arm_joint_1</joint_name>
+      <max_effort>10</max_effort>
+      <ros_topic>/omni_hex/arm_joint_1/vel/setpoint</ros_topic>
     </plugin>
-  <!-- ros2 joint control plugin start -->
+    <plugin name='arm2_joint_motor' filename='libgazebo_ros_joint_motor.so'>
+      <joint_name>arm_joint_2</joint_name>
+      <max_effort>10</max_effort>
+      <ros_topic>/omni_hex/arm_joint_2/vel/setpoint</ros_topic>
+    </plugin>
+    <plugin name='arm3_joint_motor' filename='libgazebo_ros_joint_motor.so'>
+      <joint_name>arm_joint_3</joint_name>
+      <max_effort>10</max_effort>
+      <ros_topic>/omni_hex/arm_joint_3/vel/setpoint</ros_topic>
+    </plugin>
+    <plugin name='arm4_joint_motor' filename='libgazebo_ros_joint_motor.so'>
+      <joint_name>arm_joint_4</joint_name>
+      <max_effort>10</max_effort>
+      <ros_topic>/omni_hex/arm_joint_4/vel/setpoint</ros_topic>
+    </plugin>
+    <plugin name='arm5_joint_motor' filename='libgazebo_ros_joint_motor.so'>
+      <joint_name>arm_joint_5</joint_name>
+      <max_effort>10</max_effort>
+      <ros_topic>/omni_hex/arm_joint_5/vel/setpoint</ros_topic>
+    </plugin>
+    <plugin name='arm6_joint_motor' filename='libgazebo_ros_joint_motor.so'>
+      <joint_name>arm_joint_6</joint_name>
+      <max_effort>10</max_effort>
+      <ros_topic>/omni_hex/arm_joint_6/vel/setpoint</ros_topic>
+    </plugin>
+  <!-- ros2 joint motor plugin end -->
 
   </model>
 </sdf>
