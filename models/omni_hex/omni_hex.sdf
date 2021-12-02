@@ -1070,5 +1070,20 @@
     </plugin>
   <!-- ros2 joint motor plugin end -->
 
+  <!-- joint state publisher plugin start -->
+    <plugin name="gazebo_ros_joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <ros>
+        <namespace>/omni_hex</namespace>
+      </ros>
+      <update_rate>1000</update_rate>
+      <joint_name>arm_joint_1</joint_name>
+      <joint_name>arm_joint_2</joint_name>
+      <joint_name>arm_joint_3</joint_name>
+      <joint_name>arm_joint_4</joint_name>
+      <joint_name>arm_joint_5</joint_name>
+      <joint_name>arm_joint_6</joint_name>
+    </plugin>
+  <!-- joint state publisher plugin end -->
+
   </model>
 </sdf>
