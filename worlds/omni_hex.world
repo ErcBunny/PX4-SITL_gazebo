@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <world name="default">
+        <!-- A global light source -->
+        <include>
+            <uri>model://sun</uri>
+        </include>
+        <!-- A ground plane -->
+
+        <include>
+            <uri>model://ground_plane</uri>
+        </include> -->
+
+        <!-- SHELVES -->
+        <include>
+            <name>shelves 1</name>
+            <uri>model://shelves_high2</uri>
+            <pose>0 4 0 0 0 0</pose>
+        </include>
+
+        <!-- <plugin name='gazebo_ros_state_plugin' filename='libgazebo_ros_state.so'></plugin> -->
+
+    </world>
+</sdf>
