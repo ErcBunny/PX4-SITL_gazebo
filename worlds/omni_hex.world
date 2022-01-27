@@ -15,7 +15,7 @@
         <include>
             <name>shelves 1</name>
             <uri>model://shelves_high2</uri>
-            <pose>0 4 0 0 0 0</pose>
+            <pose>4 0 0 0 0 1.57</pose>
         </include>
 
         <!-- <plugin name='gazebo_ros_state_plugin' filename='libgazebo_ros_state.so'></plugin> -->
