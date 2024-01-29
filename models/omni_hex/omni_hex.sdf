@@ -970,14 +970,55 @@
   <!-- sensor plugin end -->
 
   <!-- ros2 arm rotation plugin start -->
-    <plugin name='arm_rotation' filename='libgazebo_ros_arm_rotation.so'>
-      <joint_0>arm_joint_1</joint_0>
-      <joint_1>arm_joint_2</joint_1>
-      <joint_2>arm_joint_3</joint_2>
-      <joint_3>arm_joint_4</joint_3>
-      <joint_4>arm_joint_5</joint_4>
-      <joint_5>arm_joint_6</joint_5>
+    <plugin name='arm_rotation_1' filename='libgazebo_ros_arm_rotation.so'>
+      <joint_name>arm_joint_1</joint_name>
       <topic>/ArmRotation_PubSubTopic</topic>
+      <id>1</id>
+      <P>10</P>
+      <I>0.1</I>
+      <D>0.01</D>
+    </plugin>
+
+    <plugin name='arm_rotation_2' filename='libgazebo_ros_arm_rotation.so'>
+      <joint_name>arm_joint_2</joint_name>
+      <topic>/ArmRotation_PubSubTopic</topic>
+      <id>2</id>
+      <P>10</P>
+      <I>0.1</I>
+      <D>0.01</D>
+    </plugin>
+
+    <plugin name='arm_rotation_3' filename='libgazebo_ros_arm_rotation.so'>
+      <joint_name>arm_joint_3</joint_name>
+      <topic>/ArmRotation_PubSubTopic</topic>
+      <id>3</id>
+      <P>10</P>
+      <I>0.1</I>
+      <D>0.01</D>
+    </plugin>
+
+    <plugin name='arm_rotation_4' filename='libgazebo_ros_arm_rotation.so'>
+      <joint_name>arm_joint_4</joint_name>
+      <topic>/ArmRotation_PubSubTopic</topic>
+      <id>4</id>
+      <P>10</P>
+      <I>0.1</I>
+      <D>0.01</D>
+    </plugin>
+
+    <plugin name='arm_rotation_5' filename='libgazebo_ros_arm_rotation.so'>
+      <joint_name>arm_joint_5</joint_name>
+      <topic>/ArmRotation_PubSubTopic</topic>
+      <id>5</id>
+      <P>10</P>
+      <I>0.1</I>
+      <D>0.01</D>
+    </plugin>
+
+    <plugin name='arm_rotation_6' filename='libgazebo_ros_arm_rotation.so'>
+      <joint_name>arm_joint_6</joint_name>
+      <topic>/ArmRotation_PubSubTopic</topic>
+      <id>6</id>
       <P>10</P>
       <I>0.1</I>
       <D>0.01</D>
